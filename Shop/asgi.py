@@ -1,5 +1,5 @@
 """
-ASGI config for Shop project.
+ASGI config for Shop product.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
