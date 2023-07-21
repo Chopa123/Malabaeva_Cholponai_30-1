@@ -1,12 +1,17 @@
-{#{% extends 'layouts/index.html' %}#}
-
-{#{% block content %}#}
-{#        <style type="text/css">#}
-{#        .categories {#}
-{#            display: flex;#}
-{#            justify-content: space-between;#}
-{#            flex-wrap: wrap;#}
-{#            margin-left: 10%;#}
-{#            padding: 10px;#}
-{#            width: 80%;#}
-{#        }#}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categories</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <ul>
+        {% for category in categories %}
+            <li>
+                <img src="{{ category.icon }}" alt="{{ category.name }} icon" width="50" height="50">
+                {{ category.name }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
