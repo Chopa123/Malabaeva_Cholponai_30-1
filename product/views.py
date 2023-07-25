@@ -21,7 +21,7 @@ def categories_view(request):
     categories = Category.objects.all()
     return render(request, 'categories/categories.html', {'categories': categories})
 
-def products_detail_view (request, id):
+def products_detail_view(request, id):
     if request.method == 'GET':
         products = product.objects.get(id=id)
 

@@ -1,8 +1,8 @@
 {% extends 'layouts/index.html' %}
 
 {% block content %}
-    <style type="text/css">
-        .posts {
+   <style type="text/css">
+        .products {
             display: flex;
             justify-content: space-between;
             width: 1280px;
@@ -11,13 +11,11 @@
             padding: 30px;
             flex-wrap: wrap;
         }
-
     </style>
-
     <div class="products">
         {% for prodcut in products %}
             <div class="card" style="width: 18rem;">
-                <img src="/media/{{ products.image}}" class="card-img-top" alt="...">
+                <img src="/media/{{ product.image}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ prodcut.title }}</h5>
                     {% for Category in products.categories.all %}

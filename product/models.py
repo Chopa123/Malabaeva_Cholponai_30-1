@@ -16,7 +16,7 @@ class product(models.Model):
     size = models.TextField()
     color = models.TextField()
     categories = models.ManyToManyField(Category)
-    icon = models.CharField(max_length=100)
+    icon = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return self.title
