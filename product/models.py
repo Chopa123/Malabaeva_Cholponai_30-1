@@ -20,3 +20,10 @@ class product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Review(models.Model):
+    choices = ((i, "*" * i) for i in range(1, 6))
+    text = models.TextField()
+    rating = models.IntegerField(choices=choices, default=0)
+    products = models.ForeignKey(product, on_delete=models.CASCADE, related_name='reviews')

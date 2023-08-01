@@ -26,6 +26,22 @@
                 <h4>{{ product.created_date }}</h4>
                 <h4>{{ product.modified_date }}</h4>
             </div>
+            <p class="reviews_title">Review</p>
+
+        <form action="/products/{{ product.id }}/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add Review">
+        </form>
+
+        <div class="review">
+            {% for review in reviews %}
+                <div class="review_block">
+                    <h6>{{ review.text }}</h6>
+                    <p>{{ review.created_date }}</p>
+                </div>
+            {% endfor %}
+
         </div>
     </div>
 {% endblock %}
