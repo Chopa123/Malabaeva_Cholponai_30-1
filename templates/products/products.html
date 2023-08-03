@@ -12,6 +12,12 @@
             flex-wrap: wrap;
         }
     </style>
+    <div class = "search">
+        <form action="/product/" method="get">
+            <input type="text" name="search">
+            <input type="submit" value="Search">
+        </form>
+    </div>
     <div class="products">
         {% for product in products %}
             <div class="card" style="width: 18rem;">
@@ -26,6 +32,14 @@
             </div>
         {% endfor %}
 
+    </div>
+
+    <div class="pages">
+        {% for page in pages %}
+            <a href="/products/?page={{ page }}">
+                <button {{ page }} ></button>
+            </a>
+        {% endfor %}
     </div>
 
 {% endblock %}
